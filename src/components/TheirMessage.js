@@ -5,7 +5,7 @@ const TheirMessage = ({ message, lastMessage }) => {
   if (message.attachments && message.attachments.length > 0) {
     return (
       <>
-        <div className="img-message-username">{message.sender.username}</div>
+        <div className="message-username">{message.sender.username}</div>
         <img
           src={`${message.attachments[0].file}`}
           className="uploaded-img"
@@ -16,18 +16,20 @@ const TheirMessage = ({ message, lastMessage }) => {
     );
   }
   return (
-    <div
-      className="message"
-      style={{
-        float: "left",
-        backgroundColor: "#ca7832",
-        color: "black",
-        marginLeft: "18px",
-      }}
-    >
+    <>
       <div className="message-username">{message.sender?.username}</div>
-      {message.text}
-    </div>
+      <div
+        className="message"
+        style={{
+          float: "left",
+          backgroundColor: "#ca7832",
+          color: "black",
+          marginLeft: "18px",
+        }}
+      >
+        {message.text}
+      </div>
+    </>
   );
 };
 
