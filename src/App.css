@@ -1,38 +1,242 @@
-.App {
-  text-align: center;
+:root {
+  --main-color: #e0c4fd;
+  --secondary-color: #8fc6fd;
+  --text-color: #820b8a;
+  --gradient: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+  --reverse-gradient: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--main-color)
+  );
+  --black: rgb(20, 20, 20);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* general style */
+body {
+  background: var(--gradient);
+}
+/* end general style */
+
+/* remove scrollbars */
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+/* end remove scrollbars */
+
+/* chat engine's list of chats(left sidebar) customization */
+.ce-chat-list,
+.ce-chats-container,
+.ce-chat-form-container {
+  background-color: var(--main-color) !important;
+  color: var(--text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#new-chat-plus-button {
+  background-color: var(--text-color) !important;
+  height: auto !important;
+  padding: 8px 10px !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ce-chat-title-text {
+  font-weight: bold !important;
+  font-size: large;
+}
+.ce-chat-card {
+  margin: 8px;
+  background-color: white !important;
+}
+
+.ce-chat-subtitle-text {
+  color: var(--black) !important;
+  font-weight: bold;
+}
+
+/* end chat engine's list of chats(left sidebar) customization */
+
+/* chat engine's right sidebar customization */
+.ce-settings {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color);
+}
+
+.ce-person-title-container {
+  margin: 10px 0px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.ce-photo-section {
+  border: none;
+}
+
+.ce-photo-title-container {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#ce-options-drop-down {
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+}
+
+/* end chat engine's right sidebar customization */
+
+/* chat engine's chat feed customization */
+.ce-chat-feed-column {
+  background: var(--gradient);
+  color: var(--text-color);
+  font-family: Avenir;
+}
+
+.chat-container {
+  overflow: scroll;
+  height: 100vh;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.chat-title-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px 0px;
+  background: var(--gradient);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  margin-bottom: 20px;
+  box-shadow: rgb(191 67 246 / 20%) 0px 8px 24px;
+}
+
+.chat-user-container {
+  display: flex;
+}
+
+.single-message-container {
+  width: 100%;
+  display: inline-block;
+}
+
+.message {
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: bold;
+  margin: 10px 0px;
+  width: 180px;
+}
+
+.message-username {
+  font-size: xx-small;
+  font-style: italic;
+}
+.img-message-username {
+  font-size: xx-small;
+  font-style: italic;
+  margin: 2px 18px;
+}
+
+.read-receipt-container {
+  position: relative;
+  bottom: 6px;
+}
+
+.read-receipt {
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+  margin: 1.5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+}
+
+.message-form-container {
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 36px);
+  padding: 0px 10px 2px 18px;
+  background: var(--gradient);
+}
+
+.write-message-form {
+  overflow: hidden;
+  padding: 5px;
+  border: none;
+}
+
+.btn-send-message {
+  padding: 3px;
+  border-radius: 3px;
+  border: none;
+  margin-left: 2px;
+  height: 26px;
+}
+
+#upload-button {
   color: white;
+  margin-top: 3px;
 }
 
-.App-link {
-  color: #61dafb;
+.uploaded-img {
+  border-radius: 6px;
+  object-fit: cover;
+  max-height: 200px;
+  max-width: 200px;
+  min-height: 100px;
+  min-width: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.send-icon,
+.picture-icon {
+  top: 1px;
+  position: relative;
 }
+
+.input-write-message {
+  padding: 5px;
+  border-radius: 5px;
+  width: 90%;
+  margin-right: 2px;
+}
+
+.spacer {
+  height: 70px;
+}
+
+/* end chat engine's chat feed customization */
+
+/* login form style */
+
+.login-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  align-items: center;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.login-button {
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* end login form style */
