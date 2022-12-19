@@ -2,17 +2,19 @@ const MyMessage = ({ message }) => {
   if (message.attachments && message.attachments.length > 0) {
     return (
       <>
-        <div className="message-username">{message.sender.username}</div>
+        <div className="my-message-username">{message.sender.username}</div>
         <img
           src={`${message.attachments[0].file}`}
           className="uploaded-img"
           alt="message attachments"
-          style={{ float: "right", marginRight: "18px" }}
+          style={{ float: "right", margin: "10px 18px 10px 0px" }}
         />
       </>
     );
   }
   return (
+    <>
+      <div className="my-message-username">{message.sender?.username}</div>
       <div
         className="message"
         style={{
@@ -24,6 +26,7 @@ const MyMessage = ({ message }) => {
       >
         {message.text.trim()}
       </div>
+    </>
   );
 };
 

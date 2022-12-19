@@ -28,6 +28,7 @@ const MessageForm = (props) => {
         onSubmit={handleSubmit}
         className="input-write-message"
         placeholder="Write a message ..."
+        value={value}
       />
       <button type="submit" className="btn-send-message">
         <SendOutlined className="send-icon"/>

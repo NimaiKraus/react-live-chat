@@ -109,6 +109,7 @@ body {
   top: 0px;
   margin-bottom: 20px;
   box-shadow: rgb(191 67 246 / 20%) 0px 8px 24px;
+  z-index: 999;
 }
 
 .chat-user-container {
@@ -128,10 +129,17 @@ body {
   width: 180px;
 }
 
-.message-username {
+.their-message-username {
   font-size: xx-small;
   font-style: italic;
   margin: 2px 18px;
+}
+.my-message-username {
+  font-size: xx-small;
+  font-style: italic;
+  margin: 2px 18px;
+  display: flex;
+  justify-content: end;
 }
 
 .read-receipt-container {
@@ -169,11 +177,13 @@ body {
   border: none;
   margin-left: 2px;
   height: 26px;
+  cursor: pointer;
 }
 
 #upload-button {
   color: white;
   margin-top: 3px;
+  cursor: pointer;
 }
 
 .uploaded-img {
@@ -190,6 +200,7 @@ body {
   top: 1px;
   position: relative;
 }
+
 
 .input-write-message {
   padding: 5px;
@@ -236,3 +247,34 @@ body {
 }
 
 /* end login form style */
+
+/* logout button */
+
+@media screen and (min-width: 576px) {
+  .logout-btn {
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    right: 25px;
+    bottom: 15px;
+    width: 20%;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .logout-btn {
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    right: 25px;
+    top: 22px;
+    width: 20%;
+    cursor: pointer;
+    z-index: 999999;
+  }
+}
+
+
+
+/* end logout button */
